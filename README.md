@@ -1,10 +1,23 @@
 # Chatbot Example by Sensui
 
-This is a simple chatbot example created by Me using HTML, CSS, and JavaScript. The chatbot allows users to interact with it by typing messages and receiving responses from an external API Made By Me Too.
+<p align="center">
+    <img src="https://te.legra.ph/file/48a79b8e917046346251a.jpg" alt="Chatbot Example Screenshot">
+</p>
+
+<p align="center">
+    🤖 This is a simple chatbot example created by Me using HTML, CSS, and JavaScript. The chatbot allows users to interact with it by typing messages and receiving responses from an external API Made By Me Too. 🚀
+</p>
 
 ## Usage
 
 You are free to use and modify this code for your projects. If you use this code or create a derivative work based on it, please acknowledge the original author by providing a link back to this repository or by mentioning "Chatbot Example by Sensui" in your project's documentation.
+
+### Please consider supporting this project:
+
+🙏 If you find this project useful, you can show your support by donating:
+[Donate Here](https://replit.com/@CoderSensui/Donate-On-Me)
+
+⭐ Don't forget to star this repository on GitHub to show your appreciation!
 
 ## Note about API Fetching
 
@@ -35,10 +48,16 @@ For the full legal text of the license, you can [read the Creative Commons Attri
 
 When using or referencing this code, you can include the following attribution:
 
-"Chatbot Example by Sensui - [Link to this repository](https://github.com/CoderSensui/Chatbot-Example)"
+<p align="center">
+    Chatbot Example by Sensui - <a href="https://github.com/CoderSensui/Chatbot-Example">Link to this repository</a>
+</p>
 
 ---
 
-Happy coding! If you have any questions or need assistance, feel free to reach out.
+<p align="center">
+    <em>Happy coding! If you have any questions or need assistance, feel free to reach out.</em>
+</p>
 
-[Contact Me](https://m.facebook.com/JeanLewis345)
+<p align="center">
+    📬 <a href="https://m.facebook.com/JeanLewis345"><strong>Contact Me</strong></a> 🌟
+</p>
