@@ -19,13 +19,17 @@ You are free to use and modify this code for your projects. If you use this code
 
 ⭐ Don't forget to star this repository on GitHub to show your appreciation!
 
+## Example Link
+
+Here's an example of the chatbot in action: [Chatbot Example](https://chatbot.codersensui.repl.co/)
+
 ## Note about API Fetching
 
-The chatbot fetches data from an external API. In some cases, you might encounter issues due to the same-origin policy. To address this, the code includes a CORS proxy URL (`https://cors-anywhere.herokuapp.com/`). If you face API fetching problems, you can try using the official CORS Anywhere service by accessing the following link:
+The chatbot fetches data from an external API. In some cases, you might encounter issues due to the same-origin policy. If you face API fetching problems, you can try resolving CORS issues by accessing the following link and clicking the button:
 
-[Official CORS Anywhere Service](https://cors-anywhere.herokuapp.com/)
+[Resolve CORS Issues](https://cors-anywhere.herokuapp.com/corsdemo)
 
-You can replace the proxy URL in the code with the official CORS Anywhere service to ensure smooth API fetching.
+Click the button to enable the proxy, allowing the chatbot to work smoothly.
 
 ## License
 
