@@ -23,6 +23,12 @@ You are free to use and modify this code for your projects. If you use this code
 
 Here's an example of the chatbot in action: [Chatbot Example](https://chatbot.codersensui.repl.co/)
 
+## Features
+
+- Dark mode toggle for improved readability at all times.
+- Smooth interface for seamless user experience.
+- Scrollable message history for easy navigation and context.
+
 ## Note about API Fetching
 
 The chatbot fetches data from an external API. In some cases, you might encounter issues due to the same-origin policy. If you face API fetching problems, you can try resolving CORS issues by accessing the following link and clicking the button:
