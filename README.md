@@ -1,6 +1,6 @@
 # Chatbot Example by Sensui
 
-This is a simple chatbot example created by Me using HTML, CSS, and JavaScript. The chatbot allows users to interact with it by typing messages and receiving responses from an external API.
+This is a simple chatbot example created by Me using HTML, CSS, and JavaScript. The chatbot allows users to interact with it by typing messages and receiving responses from an external API Made By Me Too.
 
 ## Usage
 
@@ -35,7 +35,7 @@ For the full legal text of the license, you can [read the Creative Commons Attri
 
 When using or referencing this code, you can include the following attribution:
 
-"Chatbot Example by Sensui - [Link to this repository](https://github.com/YourGitHubUsername/YourChatbotRepository)"
+"Chatbot Example by Sensui - [Link to this repository](https://github.com/CoderSensui/Chatbot-Example)"
 
 ---
 
