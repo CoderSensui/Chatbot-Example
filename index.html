@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Example By Sensui</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        #chat-container {
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        #chatbox {
+            height: 300px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            overflow: auto;
+        }
+        
+        .user-message {
+            text-align: right;
+            color: #3d3d3d;
+        }
+        
+        .bot-message {
+            text-align: left;
+            color: #3d3d3d;
+        }
+        
+        .message {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            word-wrap: break-word;
+            white-space: pre-line;
+        }
+        
+        #inputBox {
+            width: 70%;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        
+        #sendButton, #darkModeToggle {
+            width: 30px;
+            height: 30px;
+            background-color: #ffffff;
+            border: none;
+            color: black;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #darkModeToggle {
+            background-color: transparent;
+        }
+        
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        
+        .dark-mode #chat-container,
+        .dark-mode #inputBox,
+        .dark-mode #sendButton {
+            background-color: #333;
+            color: white;
+        }
+        
+        .dark-mode .user-message {
+            color: #c2c2c2;
+        }
+        
+        .dark-mode .bot-message {
+            color: #c2c2c2;
+        }
+        
+        .dark-mode .message {
+            border-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container" class="dark-mode">
+        <div id="chatbox"></div>
+        <div style="display: flex; align-items: center;">
+            <button id="darkModeToggle" onclick="toggleDarkMode()"></button>
+            <input type="text" id="inputBox" placeholder="Type your message...">
+            <button id="sendButton">&#10148;</button>
+        </div>
+    </div>
+    
+    <script>
+        const chatbox = document.getElementById('chatbox');
+        const inputBox = document.getElementById('inputBox');
+        const sendButton = document.getElementById('sendButton');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        let isDarkMode = false;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDarkMode();
+        });
+        
+        sendButton.addEventListener('click', sendMessage);
+        inputBox.addEventListener('keydown', event => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+        
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            updateDarkMode();
+        }
+        
+        function updateDarkMode() {
+            const body = document.body;
+            const chatContainer = document.getElementById('chat-container');
+            
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                chatContainer.classList.add('dark-mode');
+                inputBox.classList.add('dark-mode');
+                sendButton.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                body.classList.remove('dark-mode');
+                chatContainer.classList.remove('dark-mode');
+                inputBox.classList.remove('dark-mode');
+                sendButton.classList.remove('dark-mode');
+                darkModeToggle.textContent = '🌑';
+            }
+        }
+        
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('div');
+            messageElement.className = isUser ? 'user-message message' : 'bot-message message';
+            messageElement.textContent = message;
+            chatbox.appendChild(messageElement);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+        
+        async function fetchAnswerFromAPI(question) {
+            try {
+                const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                const apiUrl = `https://sensui-useless-apis.codersensui.repl.co/api/tools/ai?question=${encodeURIComponent(question)}`;
+                const apiUrlWithProxy = proxyUrl + apiUrl;
+                
+                const response = await fetch(apiUrlWithProxy);
+                const data = await response.json();
+                const answer = data.answer;
+                addMessage(answer);
+            } catch (error) {
+                addMessage("Oops! An error occurred while fetching the answer.");
+            }
+        }
+        
+        function sendMessage() {
+            const userMessage = inputBox.value;
+            if (userMessage.trim() !== '') {
+                addMessage(userMessage, true);
+                fetchAnswerFromAPI(userMessage);
+            }
+            inputBox.value = '';
+        }
+    </script>
+    <div style="position: absolute; bottom: 0; text-align: center; width: 100%; margin-bottom: 10px; font-size: 12px; color: #888;">
+        Chatbot Example Created By <a href="https://m.facebook.com/JeanLewis345" style="font-weight: bold; color: #888;">Sensui</a>
+    </div>
+</body>
+  </html>
+  
