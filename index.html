@@ -160,11 +160,9 @@
         
         async function fetchAnswerFromAPI(question) {
             try {
-                const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-                const apiUrl = `https://sensui-useless-apis.codersensui.repl.co/api/tools/ai?question=${encodeURIComponent(question)}`;
-                const apiUrlWithProxy = proxyUrl + apiUrl;
-                
-                const response = await fetch(apiUrlWithProxy);
+                const proxyUrl = 'https://sensui-useless-apis.codersensui.repl.co'; // Your Replit proxy URL
+                const apiUrl = `${proxyUrl}/api/tools/ai?question=${encodeURIComponent(question)}`;
+                const response = await fetch(apiUrl);
                 const data = await response.json();
                 const answer = data.answer;
                 addMessage(answer);
